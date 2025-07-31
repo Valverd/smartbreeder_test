@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./index.html",          // caso tenha um index.html na raiz
-    "./src/**/*.{js,ts,jsx,tsx}"  // seu código fonte React TS
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        smartcolor: '#00b3c7',
+      },
+    },
   },
   plugins: [],
 }
