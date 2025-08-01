@@ -52,7 +52,7 @@ export default function Modal({ showModal, setShowModal, product }: ModalProps) 
                     ref={outRef}
                 >
                     <motion.div
-                        className="bg-white rounded-2xl shadow-md p-6 max-w-xl w-full max-h-[85vh] overflow-y-auto relative border border-gray-200"
+                        className="bg-white rounded-2xl shadow-md p-6 max-w-xl w-full max-h-[85vh] overflow-y-auto relative border border-gray-200 mx-10"
                         initial={{ scale: 0.95 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
