@@ -1,69 +1,52 @@
-# React + TypeScript + Vite
+# Lista de Produtos - React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida com React e TypeScript que permite visualizar, filtrar, favoritar e explorar detalhes de produtos de forma simples e interativa.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+### Listagem de Produtos
+- Exibição de uma lista de produtos com nome, preço e categorias.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Favoritos
+- Cada produto pode ser favoritado ou removido dos favoritos.
+- Limite de dois produtos favoritados por categoria.
+  - Ao favoritar um terceiro produto da mesma categoria, o mais antigo é removido automaticamente.
+  - Produtos com múltiplas categorias são contabilizados em todas.
+- Página dedicada para visualizar apenas os produtos favoritados.
+- Contador de favoritos exibido no cabeçalho, atualizado em tempo real.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Filtros e Busca
+- Filtro por nome do produto.
+- Filtro por categoria.
+- Filtro por preço (mínimo e máximo).
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Modal de Detalhes
+- Modal com informações completas do produto.
+- Visualização de variantes (ex: cor, tamanho), se existirem.
+- Ações de favoritar ou desfavoritar diretamente no modal.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Paginação
+- Paginação de produtos na página inicial.
+- Navegação entre páginas com botões para próxima, anterior e número da página.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- Tailwind CSS
+- Context API
+- Framer Motion
+- React Icons
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Como Executar
+
+```bash
+# Instale as dependências
+npm install
+
+# Inicie o projeto localmente
+npm run dev
