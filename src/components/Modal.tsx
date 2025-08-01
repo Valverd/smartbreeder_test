@@ -3,19 +3,29 @@ import { AnimatePresence, motion } from "framer-motion"
 import type { CategoryType, ProductType } from "../types/product_type"
 import { IoClose } from "react-icons/io5"
 import categories_json from "../database/categorias.json"
-import { IoHeartSharp, IoHeartOutline } from "react-icons/io5";
+import { IoHeartSharp, IoHeartOutline } from "react-icons/io5"
+import { favoriteContext } from "../context/Context"
 
 type ModalProps = {
     showModal: boolean
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>
     product: ProductType
-    favorite: boolean
-    setFavorite: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Modal({ showModal, setShowModal, product, favorite, setFavorite }: ModalProps) {
+export default function Modal({ showModal, setShowModal, product }: ModalProps) {
     const outRef = useRef<HTMLDivElement | null>(null)
     const categories = categories_json as CategoryType[]
+    const { favorites, setFavorites } = favoriteContext()
+
+    const isFavorite = favorites.some((item: ProductType) => item.id === product.id)
+
+    function handleFavorite() {
+        if (isFavorite) {
+            setFavorites(favorites.filter((item: ProductType) => item.id !== product.id))
+        } else {
+            setFavorites([...favorites, product])
+        }
+    }
 
     useEffect(() => {
         function handleClickOut(event: MouseEvent) {
@@ -93,9 +103,9 @@ export default function Modal({ showModal, setShowModal, product, favorite, setF
 
                             <button
                                 className="flex items-center gap-1 my-4 p-2 smartcolor-bg text-white rounded-lg cursor-pointer hover:opacity-85 hover:scale-[1.05] transition duration-300"
-                                onClick={() => setFavorite(!favorite)}
+                                onClick={handleFavorite}
                             >
-                                {favorite ? (<>Desfavoritar <IoHeartSharp size={20} /></>) : (<>Favoritar <IoHeartOutline size={20} /></>)}
+                                {isFavorite ? (<>Desfavoritar <IoHeartSharp size={20} /></>) : (<>Favoritar <IoHeartOutline size={20} /></>)}
 
                             </button>
 

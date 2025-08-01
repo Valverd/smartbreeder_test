@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
+body{
+  overflow-x: hidden;
+}
+
 .modal-overlay {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.smartcolor{
+  color: #00b3c7;
 }
 
 .smartcolor-bg {
