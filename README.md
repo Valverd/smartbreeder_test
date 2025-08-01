@@ -2,7 +2,7 @@
 
 Aplicação web desenvolvida com React e TypeScript que permite visualizar, filtrar, favoritar e explorar detalhes de produtos de forma simples e interativa.
 
----
+<img width="1481" height="775" alt="image" src="https://github.com/user-attachments/assets/d22f0ad0-8120-4cd2-9aee-d78eba6b7023" />
 
 ## Funcionalidades
 
@@ -16,6 +16,9 @@ Aplicação web desenvolvida com React e TypeScript que permite visualizar, filt
   - Produtos com múltiplas categorias são contabilizados em todas.
 - Página dedicada para visualizar apenas os produtos favoritados.
 - Contador de favoritos exibido no cabeçalho, atualizado em tempo real.
+
+<img width="1498" height="712" alt="image" src="https://github.com/user-attachments/assets/178b07ca-0218-4671-a62f-0db9a7721334" />
+
 
 ### Filtros e Busca
 - Filtro por nome do produto.
