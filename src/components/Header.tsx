@@ -8,7 +8,7 @@ export default function Header() {
     const counter = favorites.length
 
     return (
-        <header className="w-screen smartcolor-bg shadow-xl text-white ">
+        <header className="w-screen smartcolor-bg shadow-lg text-white ">
             <div className="px-6 py-4 max-w-7xl m-auto flex items-center justify-between">
                 <Link to={'/'} className="text-xl font-bold hover:opacity-85 duration-300">SmartShop</Link>
                 <Link className="flex items-center gap-1 cursor-pointer hover:opacity-85 duration-300" to={'/favorites'}>

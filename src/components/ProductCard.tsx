@@ -48,7 +48,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <>
       <div
-        className="flex justify-between items-start border rounded-lg p-4 shadow hover:scale-[1.02] hover:cursor-pointer transition duration-300"
+        className="flex justify-between items-start border rounded-lg p-4 shadow-md hover:scale-[1.02] hover:cursor-pointer transition duration-300"
         onClick={() => {
           setShowModal(!showModal)
         }}

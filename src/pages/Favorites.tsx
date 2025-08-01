@@ -16,6 +16,8 @@ export default function Favorite() {
     return (
         <Layout>
             <>
+                <h1 className='text-center text-2xl font-semibold mb-10'>Favoritos</h1>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {currentItems.map((product) => (
                         <ProductCard key={product.id} product={product} />

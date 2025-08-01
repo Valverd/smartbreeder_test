@@ -6,7 +6,7 @@ import categories_json from "../database/categorias.json"
 import { IoHeartSharp, IoHeartOutline } from "react-icons/io5"
 import { favoriteContext } from "../context/Context"
 
-type ModalProps = {
+interface ModalProps {
     showModal: boolean
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>
     product: ProductType
@@ -52,7 +52,7 @@ export default function Modal({ showModal, setShowModal, product }: ModalProps) 
                     ref={outRef}
                 >
                     <motion.div
-                        className="bg-white rounded-2xl shadow-xl p-6 max-w-xl w-full max-h-[85vh] overflow-y-auto relative border border-gray-200"
+                        className="bg-white rounded-2xl shadow-md p-6 max-w-xl w-full max-h-[85vh] overflow-y-auto relative border border-gray-200"
                         initial={{ scale: 0.95 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
@@ -115,7 +115,7 @@ export default function Modal({ showModal, setShowModal, product }: ModalProps) 
                                     {product.variacao.map((variacao, index) => (
                                         <div
                                             key={index}
-                                            className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-lg shadow-customized"
+                                            className="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-md "
                                         >
                                             {Object.entries(variacao).map(([propriedade, valor]) => {
                                                 return (
